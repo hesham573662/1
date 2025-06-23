@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Internal Config</title>
-    <meta name="description" content="DB_USER=root">
-    <meta property="og:description" content="DB_PASSWORD=SuperSecret123!">
-    <meta property="og:image" content="http://10.0.0.5/internal/logo.png">
+    <title>Check Internal Service</title>
+    <meta name="description" content="Attempting to access: http://169.254.169.254/latest/meta-data/hostname">
+    <meta property="og:description" content="Sensitive info inside.">
+    <meta property="og:image" content="http://169.254.169.254/latest/meta-data/local-ipv4">
   </head>
   <body>
-    <h1>Environment: Production</h1>
-    <p>Only internal admins should access this config.</p>
+    <h1>Metadata Access</h1>
   </body>
 </html>
